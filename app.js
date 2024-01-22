@@ -20,6 +20,11 @@ app.use(
 );
 
 app.use(express.json());
+
+app.get('/',(req, res) => {
+  res.send('Jai Sia Ram Jai Bajrangbali')
+})
+
 app.use(
   session({
     secret: "TWyILl0SNnqxLU0vqpvQ3yvYshhaYgqQ",
