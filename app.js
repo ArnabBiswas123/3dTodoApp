@@ -13,7 +13,7 @@ require("dotenv").config();
 const cors = require("cors");
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://65ae7b6df55f310c610862ce--lucent-quokka-b17931.netlify.app",
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
   })
@@ -54,7 +54,6 @@ passport.use(
 
           await user.save();
         }
-
         return done(null, user);
       } catch (error) {
         return done(error, null);
@@ -79,8 +78,8 @@ app.get(
 app.get(
   "/auth/google/callback",
   passport.authenticate("google", {
-    successRedirect: "http://localhost:5173/todo",
-    failureRedirect: "http://localhost:5173",
+    successRedirect: "https://65ae7b6df55f310c610862ce--lucent-quokka-b17931.netlify.app/todo",
+    failureRedirect: "https://65ae7b6df55f310c610862ce--lucent-quokka-b17931.netlify.app",
   })
 );
 
@@ -97,7 +96,7 @@ app.get("/logout", (req, res, next) => {
     if (err) {
       return next(err);
     }
-    res.redirect("http://localhost:5173");
+    res.redirect("https://65ae7b6df55f310c610862ce--lucent-quokka-b17931.netlify.app");
   });
 });
 
