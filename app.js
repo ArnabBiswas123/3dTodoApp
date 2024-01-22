@@ -13,7 +13,7 @@ require("dotenv").config();
 const cors = require("cors");
 app.use(
   cors({
-    origin: "https://65ae7b6df55f310c610862ce--lucent-quokka-b17931.netlify.app",
+    origin: "https://3d-todo-app-frontend.vercel.app",
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
   })
@@ -83,8 +83,8 @@ app.get(
 app.get(
   "/auth/google/callback",
   passport.authenticate("google", {
-    successRedirect: "https://65ae7b6df55f310c610862ce--lucent-quokka-b17931.netlify.app/todo",
-    failureRedirect: "https://65ae7b6df55f310c610862ce--lucent-quokka-b17931.netlify.app",
+    successRedirect: "https://3d-todo-app-frontend.vercel.app/todo",
+    failureRedirect: "https://3d-todo-app-frontend.vercel.app",
   })
 );
 
@@ -101,7 +101,7 @@ app.get("/logout", (req, res, next) => {
     if (err) {
       return next(err);
     }
-    res.redirect("https://65ae7b6df55f310c610862ce--lucent-quokka-b17931.netlify.app");
+    res.redirect("https://3d-todo-app-frontend.vercel.app");
   });
 });
 
